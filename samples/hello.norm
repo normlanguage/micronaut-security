@@ -21,7 +21,7 @@ public class AccessRoutes {
 
 Module module() {
   module(dependencies: [
-    dependency(repository: "github", name: "micronaut.web", version: 7),
+    dependency(repository: "github", name: "micronaut.web", version: 8),
     dependency(repository: "github", name: "micronaut.security", version: 3)
   ])
 }

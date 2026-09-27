@@ -1,0 +1,36 @@
+import micronaut.http.annotation.Controller
+import micronaut.http.annotation.Get
+import micronaut.security.annotation.Secured
+import micronaut.web.MicronautApplication
+import micronaut.web.MicronautConfig
+import micronaut.web.Micronaut
+import micronaut.web.Server
+import micronaut.web.Security
+import std.application.Application
+
+@Controller("/sample")
+public class AccessRoutes {
+  @Secured(value: ["isAnonymous()"])
+  @Get(value: "/public", produces: ["text/plain"])
+  String publicPage() { "Anyone can read this" }
+
+  @Secured(value: ["isAuthenticated()"])
+  @Get(value: "/private", produces: ["text/plain"])
+  String privatePage() { "Authenticated request" }
+}
+
+Module module() {
+  module(dependencies: [
+    dependency(repository: "github", name: "micronaut.web", version: 7),
+    dependency(repository: "github", name: "micronaut.security", version: 3)
+  ])
+}
+
+public Application application() {
+  return MicronautApplication(config: MicronautConfig(
+    micronaut: Micronaut(
+      server: Server(host: "127.0.0.1", port: 18771),
+      security: Security(enabled: true)
+    )
+  ))
+}

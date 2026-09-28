@@ -18,3 +18,5 @@ curl -i 'http://127.0.0.1:18771/sample/private'
 ```
 
 预期结果：HTTP 200，正文为 `Anyone can read this`；随后 HTTP 401，响应为 `Unauthorized`。按 Ctrl+C 停止服务。本示例未配置认证提供者，因此不展示通过认证的请求。
+
+[验收示例](../examples/sample/micronaut/security/Main.norm)另外验证身份验证响应的构造。

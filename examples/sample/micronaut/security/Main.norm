@@ -1,4 +1,4 @@
-package micronaut.security
+package sample.micronaut.security
 
 import micronaut.security.authentication.authenticationResponseFailure
 import micronaut.security.authentication.authenticationResponseSuccess

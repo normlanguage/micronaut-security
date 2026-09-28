@@ -1,0 +1,7 @@
+Module module() {
+  return module(
+    name: "sample.micronaut.security",
+    version: 1,
+    dependencies: [dependency(repository: "github", name: "micronaut.security", version: 4)]
+  )
+}

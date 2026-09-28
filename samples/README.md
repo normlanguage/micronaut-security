@@ -18,3 +18,5 @@ curl -i 'http://127.0.0.1:18771/sample/private'
 ```
 
 Expected results: HTTP 200 with `Anyone can read this`, then HTTP 401 with an `Unauthorized` response. Stop the server with Ctrl+C. This sample does not configure an authentication provider, so it does not demonstrate a successful authenticated request.
+
+The [acceptance example](../examples/sample/micronaut/security/Main.norm) checks authentication response construction separately.

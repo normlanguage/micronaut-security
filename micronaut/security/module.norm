@@ -1,7 +1,7 @@
 Module module() {
   return module(
     name: "micronaut.security",
-    version: 5,
+    version: 6,
     exports: ["annotation.Secured", "authentication.Authentication", "authentication.AuthenticationRequest", "authentication.AuthenticationResponse", "authentication.provider.AuthenticationProvider", "rules.SecurityRule", "utils.SecurityService"],
     dependencies: [dependency(repository: "norm", name: "java.base", version: 1)],
     binding: jarBinding(
